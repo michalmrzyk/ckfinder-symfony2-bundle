@@ -8,7 +8,7 @@ This repository contains the CKFinder 3 bundle for Symfony 2.
 1. Add Composer dependency and install the bundle.
 
 	```bash
-	composer require ckfinder/ckfinder-symfony2-bundle
+	composer require ckfinder/ckfinder-symfony2-bundle:3.1.0-alpha
 	```
 
 2. Enable the bundle in `AppKernel.php`.
