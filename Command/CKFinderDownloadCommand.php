@@ -119,7 +119,7 @@ class CKFinderDownloadCommand extends ContainerAwareCommand
         for ($i = 0; $i < $zip->numFiles; $i++) {
             $entry = $zip->getNameIndex($i);
 
-            if(in_array($entry, $filesToKeep) && file_exists($targetPublicPath . '/' . $entry)) {
+            if (in_array($entry, $filesToKeep) && file_exists($targetPublicPath . '/' . $entry)) {
                 continue;
             }
 

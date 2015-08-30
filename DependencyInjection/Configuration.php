@@ -98,7 +98,18 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('defaultResourceTypes')->end()
             ->arrayNode('resourceTypes')
                 ->performNoDeepMerging()
-                ->prototype('variable')->end()
+                ->prototype('array')
+                    ->children()
+                        ->scalarNode('name')->isRequired()->end()
+                        ->scalarNode('backend')->isRequired()->end()
+                        ->scalarNode('label')->end()
+                        ->scalarNode('directory')->end()
+                        ->scalarNode('allowedExtensions')->end()
+                        ->scalarNode('deniedExtensions')->end()
+                        ->scalarNode('maxSize')->end()
+                        ->booleanNode('lazyLoad')->end()
+                    ->end()
+                ->end()
             ->end()
             ->scalarNode('roleSessionVar')->end()
             ->arrayNode('accessControl')
@@ -149,6 +160,7 @@ class Configuration implements ConfigurationInterface
                     ->integerNode('thumbnails')->defaultValue(24 * 3600 * 365)->end()
                 ->end()
             ->end()
+            ->scalarNode('tempDirectory')->end()
         ->end();
 
         return $connectorNode;

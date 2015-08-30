@@ -162,6 +162,11 @@ $config['cache'] = array(
     'thumbnails'   => 24 * 3600 * 365
 );
 
+/*============================ Temp Directory settings ================================*/
+// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_tempDirectory
+
+$config['tempDirectory'] = sys_get_temp_dir();
+
 /*============================== End of Configuration =================================*/
 
 $container->prependExtensionConfig('ckfinder', array( 'connector' => $config));

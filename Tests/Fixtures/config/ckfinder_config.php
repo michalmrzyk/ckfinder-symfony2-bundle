@@ -98,5 +98,6 @@ $config['cache'] = array(
     'imagePreview' => 24 * 3600,
     'thumbnails'   => 24 * 3600 * 365
 );
+$config['tempDirectory'] = sys_get_temp_dir();
 
 return $config;
