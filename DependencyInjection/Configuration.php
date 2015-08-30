@@ -45,6 +45,7 @@ class Configuration implements ConfigurationInterface
 
         $connectorNode
             ->children()
+            ->setNodeClass('variableArray', 'CKSource\Bundle\CKFinderBundle\Config\Definition\Builder\VariableArrayNodeDefinition')
             ->scalarNode('connectorClass')->defaultValue('CKSource\CKFinder\CKFinder')->end()
             ->scalarNode('authenticationClass')->defaultValue('CKSource\Bundle\CKFinderBundle\Authentication\Authentication')->end()
             ->scalarNode('licenseName')->end()
@@ -91,7 +92,8 @@ class Configuration implements ConfigurationInterface
                 ->end()
             ->end()
             ->arrayNode('backends')
-                ->prototype('variable')->end()
+                ->useAttributeAsKey('name', false)
+                ->prototype('variableArray')->requiresKeys(array('name', 'adapter'))->end()
             ->end()
             ->scalarNode('defaultResourceTypes')->end()
             ->arrayNode('resourceTypes')
