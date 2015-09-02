@@ -99,5 +99,6 @@ $config['cache'] = array(
     'thumbnails'   => 24 * 3600 * 365
 );
 $config['tempDirectory'] = sys_get_temp_dir();
+$config['sessionWriteClose'] = true;
 
 return $config;

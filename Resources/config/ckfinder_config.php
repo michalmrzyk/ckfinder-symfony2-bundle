@@ -167,6 +167,11 @@ $config['cache'] = array(
 
 $config['tempDirectory'] = sys_get_temp_dir();
 
+/*============================ Session Cause Performance Issues =======================*/
+// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_sessionWriteClose
+
+$config['sessionWriteClose'] = true;
+
 /*============================== End of Configuration =================================*/
 
 $container->prependExtensionConfig('ckfinder', array( 'connector' => $config));
