@@ -158,6 +158,7 @@ class Configuration implements ConfigurationInterface
                 ->children()
                     ->integerNode('imagePreview')->defaultValue(24 * 3600)->end()
                     ->integerNode('thumbnails')->defaultValue(24 * 3600 * 365)->end()
+                    ->integerNode('proxyCommand')->defaultValue(0)->end()
                 ->end()
             ->end()
             ->scalarNode('tempDirectory')->end()

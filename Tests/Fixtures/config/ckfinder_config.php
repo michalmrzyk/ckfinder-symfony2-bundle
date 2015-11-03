@@ -96,7 +96,8 @@ $config['debug'] = false;
 $config['plugins'] = array();
 $config['cache'] = array(
     'imagePreview' => 24 * 3600,
-    'thumbnails'   => 24 * 3600 * 365
+    'thumbnails'   => 24 * 3600 * 365,
+    'proxyCommand' => 0
 );
 $config['tempDirectory'] = sys_get_temp_dir();
 $config['sessionWriteClose'] = true;
