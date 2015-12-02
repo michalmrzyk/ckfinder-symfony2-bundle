@@ -93,6 +93,7 @@ $config['hideFiles'] = array('.*');
 $config['forceAscii'] = false;
 $config['xSendfile'] = false;
 $config['debug'] = false;
+$config['debugLoggers'] = array('ckfinder_log', 'error_log', 'firephp');
 $config['plugins'] = array();
 $config['cache'] = array(
     'imagePreview' => 24 * 3600,
