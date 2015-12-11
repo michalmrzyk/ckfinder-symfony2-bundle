@@ -172,6 +172,11 @@ $config['tempDirectory'] = sys_get_temp_dir();
 
 $config['sessionWriteClose'] = true;
 
+/*================================= CSRF protection ===================================*/
+// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_csrfProtection
+
+$config['csrfProtection'] = true;
+
 /*============================== End of Configuration =================================*/
 
 $container->prependExtensionConfig('ckfinder', array( 'connector' => $config));

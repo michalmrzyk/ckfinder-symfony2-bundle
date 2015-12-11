@@ -102,5 +102,6 @@ $config['cache'] = array(
 );
 $config['tempDirectory'] = sys_get_temp_dir();
 $config['sessionWriteClose'] = true;
+$config['csrfProtection'] = true;
 
 return $config;
