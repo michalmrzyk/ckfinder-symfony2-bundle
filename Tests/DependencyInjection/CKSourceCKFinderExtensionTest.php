@@ -42,7 +42,7 @@ class CKSourceCKFinderExtensionTest extends \PHPUnit_Framework_TestCase
         $this->container->setParameter('twig.form.resources', array());
         $this->container->setParameter('kernel.cache_dir', '/app/cache');
         $this->container->setParameter('kernel.logs_dir', '/app/logs');
-        $this->container->setParameter('assetic.read_from', '/web');
+        $this->container->setParameter('kernel.root_dir', '/app');
 
         $this->container->registerExtension($ckfinderExtension);
         $this->container->loadFromExtension($ckfinderExtension->getAlias());
