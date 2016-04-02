@@ -12,6 +12,7 @@
 namespace CKSource\Bundle\CKFinderBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
@@ -68,8 +69,7 @@ class CKFinderDownloadCommand extends ContainerAwareCommand
             }
         }
 
-        /* @var $progressBar \Symfony\Component\Console\Helper\ProgressHelper */
-        $progressBar = $this->getHelperSet()->get('progress');
+        $progressBar = new ProgressBar();
 
         $maxBytes = 0;
         $ctx = stream_context_create(array(), array(
