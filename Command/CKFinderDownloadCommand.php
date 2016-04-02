@@ -69,7 +69,7 @@ class CKFinderDownloadCommand extends ContainerAwareCommand
             }
         }
 
-        $progressBar = new ProgressBar();
+        $progressBar = new ProgressBar($output);
 
         $maxBytes = 0;
         $ctx = stream_context_create(array(), array(
