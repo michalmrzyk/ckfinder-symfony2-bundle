@@ -81,7 +81,7 @@ class CKFinderDownloadCommand extends ContainerAwareCommand
                         $progressBar->start($output, $bytesMax);
                         break;
                     case STREAM_NOTIFY_PROGRESS:
-                        $progressBar->setCurrent($bytesTransferred);
+                        $progressBar->setProgress($bytesTransferred);
                         break;
                 }
             }
@@ -98,7 +98,7 @@ class CKFinderDownloadCommand extends ContainerAwareCommand
             return;
         }
 
-        $progressBar->setCurrent($maxBytes);
+        $progressBar->setProgress($maxBytes);
         $progressBar->finish();
 
         $output->writeln('Extracting CKFinder to the CKSourceCKFinderBundle::Resources/public directory.');
